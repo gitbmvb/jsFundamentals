@@ -85,7 +85,7 @@ console.log(`String
 with
 multiple
 linessss`);
-*/
+
 
 
 //Type conversion and coercion
@@ -105,3 +105,98 @@ console.log("I'm " + 19 + " years old.");
 console.log('23' - '10' - 3);
 console.log('23' + '10' + 3);
 console.log('23'/'2');
+
+
+//Truthy and falsy values
+
+//False values = 0, '', undefined, null, NaN
+console.log(Boolean(0));
+console.log(Boolean('Bruno'));
+console.log(Boolean(''));
+console.log(Boolean({}));
+console.log(Boolean(undefined));
+
+
+//Ex
+const money = 10;
+if(money){
+    console.log("Don't spend it all!");
+} else {
+    console.log("You should get a job.");
+}
+//Check if a variable is defined of not
+let height = 0;
+if(typeof height == undefined){
+    console.log("Height is defined.");
+} else{
+    console.log("It's undefined.");
+}
+
+
+//Equlity operators === vs ==
+const age = '18';
+
+//Strictly equal-->best to use
+if(age === 18) console.log("You just have became an adult!(1)");
+
+if(age == 18) console.log("You just have became an adult!(2)");
+
+const favNumber = Number(prompt("What's your favorite number?"));
+
+console.log(favNumber);
+
+
+//Boolean logic and logic operators
+const hasDriversLicense = true;
+const hasGoodVision = false;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+
+const isTired = false;
+
+console.log(hasDriversLicense && hasGoodVision || !isTired);
+
+
+//Switch statement
+
+const day = "tuesday";
+
+switch(day){
+    case 'monday'://equivalent to day === 'monday'
+        console.log("Let's study OOP!");
+        break;
+    case 'tuesday':
+    case 'wednesday': //day === 'tuesday' || day === 'wednesday'
+        console.log("Let's study calculus!");
+        break;
+    default:
+        console.log("That's not a valid day.");
+        break;
+}
+
+if(day === 'monday')
+    console.log("Let's study OOP!");
+else if(day === 'tuesday' || day === 'wednesday')
+    console.log("Let's study calculus!");
+else
+    console.log("That's not a valid day.");
+ 
+
+//Statements and Expressions
+
+//Statement = bigger block of code that is executed and
+//doesn't produce a value by itself.
+
+//Expression = piece of code that produces a value.
+
+
+//The conditional (ternary) operator
+
+const age = 19;
+
+const letter = age >= 18 ? "A": "B";
+console.log(letter)
+
+
+*/
