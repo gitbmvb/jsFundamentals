@@ -26,7 +26,7 @@ else if(avgDolphins === avgKoalas && avgDolphins >= 100 && avgKoalas >= 100)
     console.log("It's a draw, ladies and gentlemen!");
 else
     console.log("Unfortunately, no one has won the cpt.");
-*/
+
 const bill = 430;
 const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
 
@@ -35,3 +35,4 @@ console.log(
 Tip: ${tip}
 Total: ${bill + tip}
 `);
+*/
