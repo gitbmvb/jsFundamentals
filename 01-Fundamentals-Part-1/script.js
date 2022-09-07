@@ -198,5 +198,4 @@ const age = 19;
 const letter = age >= 18 ? "A": "B";
 console.log(letter)
 
-
 */
