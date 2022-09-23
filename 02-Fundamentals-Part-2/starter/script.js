@@ -97,3 +97,23 @@ const yearRet1 = birthYear => 65 - calcAge3(birthYear) <= 0 ? "Already retired!"
 
 console.log(yearRet1(2003));
 */
+
+// Working with arrays
+
+const chemicalElements = ['Carbon',
+'Hydrogen', 'Oxygen', 'Phosphor'];
+
+console.log(chemicalElements);
+console.log(chemicalElements[0]);
+console.log(chemicalElements.length);
+
+const years = new Array(1918, 1945, 1991);
+console.log(years);
+
+chemicalElements[3] = 'Sulfur';
+//An array's item can be changed, although its a const variable
+console.log(chemicalElements);
+
+const bruno = ['Bruno', 'Martins', 2003, 19,
+'Software Engineering Student'];
+console.log(bruno);
