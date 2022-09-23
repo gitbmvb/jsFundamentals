@@ -75,7 +75,7 @@ const yearNow = (birthYear, age) => birthYear + age;
 console.log(yearRet(2003));
 console.log(yearNow(2003, 19));
 
-*/
+
 
 // Functions calling other functions
 
@@ -90,5 +90,10 @@ function fruitProcessor(apples, oranges){
 
 console.log(fruitProcessor(2, 3));
 
+// Reviewing functions
 
+const calcAge3 = birthYear => 2022 - birthYear;
+const yearRet1 = birthYear => 65 - calcAge3(birthYear) <= 0 ? "Already retired!" : 65 - calcAge3(birthYear);
 
+console.log(yearRet1(2003));
+*/
