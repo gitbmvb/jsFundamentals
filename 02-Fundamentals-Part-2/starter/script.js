@@ -187,7 +187,6 @@ if(bruno[info]){
 } else {
     alert("This is not a valid property.");
 }
-*/
 
 // Object methods
 
@@ -203,10 +202,23 @@ const bruno = {
     //     return 2022 - birthYear;
     // } Method = object's function
 
-    calcAge: function(birthYr=this.birthYear){
-        return 2022 - birthYr;
+    // calcAge: function(birthYr=this.birthYear){
+    //     return 2022 - birthYr;
+    // }
+    calcAge: function(){
+        this.age = 2022 - this.birthYear;
+        return this.age;
+    },
+    introduceMe: function(){
+        const condition = this.hasDriversLicense ? "has": "doesn't have";
+        console.log(`Mr. ${this.lastName} is a ${this.age}-years old ${this.job}, and he ${condition} a driver's license.`);
     }
 };
 
-console.log(bruno.calcAge(2000));
-console.log(bruno['calcAge']());
+// console.log(bruno.calcAge(2000));
+// console.log(bruno['calcAge']());
+console.log(bruno.calcAge());
+console.log(bruno.age);
+bruno.introduceMe();
+
+*/
