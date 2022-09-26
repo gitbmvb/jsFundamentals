@@ -96,7 +96,7 @@ const calcAge3 = birthYear => 2022 - birthYear;
 const yearRet1 = birthYear => 65 - calcAge3(birthYear) <= 0 ? "Already retired!" : 65 - calcAge3(birthYear);
 
 console.log(yearRet1(2003));
-*/
+
 
 // Working with arrays
 
@@ -117,3 +117,96 @@ console.log(chemicalElements);
 const bruno = ['Bruno', 'Martins', 2003, 19,
 'Software Engineering Student'];
 console.log(bruno);
+
+// Basic Array Operations
+
+
+const chemicalElements = ['Carbon',
+'Hydrogen', 'Oxygen', 'Phosphor'];
+
+//.push() = add a new element to the end of the array
+const nytro = chemicalElements.push("Nytrogen")
+console.log(nytro);
+console.log(chemicalElements);
+
+//.unshift() = add a new element to the beginning of the array
+const Ur = chemicalElements.unshift("Uranium");
+console.log(Ur);//return the amount of elements stored in the array
+console.log(chemicalElements);
+
+//.pop() = deletes the last element
+const popped = chemicalElements.pop();
+console.log(popped);
+console.log(chemicalElements);
+
+//.shift() = deletes the first element from the array
+chemicalElements.shift();
+console.log(chemicalElements);
+
+
+//.indexof() = returns the index of a certain element inside a array
+//.includes() = boolean functions which returns if a
+// element exists in a array or not. (Strict equality)
+
+console.log(chemicalElements.indexOf("Oxygen"));
+
+//This element doesn't exist in the array, so
+//the program returns -1.
+console.log(chemicalElements.indexOf("Sodium"));
+console.log(chemicalElements.includes("Hydrogen"));
+
+if(chemicalElements.includes("Oxygen"))
+    console.log("Yeah, there is oxygen here!")
+
+//Introduction to objects
+
+// Objets are property-indexed arrays
+
+const bruno = {
+    firstName: 'Bruno',
+    lastName: 'Martins',
+    age: 19,
+    job: 'Software Engineering Student'
+
+};
+
+// Dot vs. Bracket Notation
+
+console.log(bruno);
+console.log(bruno['firstName']);
+const nameKey = 'Name';
+console.log(bruno['last' + nameKey]);
+console.log(bruno.firstName);
+bruno.lastName = 'Martins Valério Bomfim';
+bruno["job"] = "Student";
+
+const info = prompt('What do you wanna know about me?');
+
+if(bruno[info]){
+    alert(bruno[info]);
+} else {
+    alert("This is not a valid property.");
+}
+*/
+
+// Object methods
+
+const bruno = {
+    firstName: 'Bruno',
+    lastName: 'Martins',
+    favProgLangs: ['Python', 'Javascript', 'PHP', 'Html', 'C++'],
+    job: 'Software Engineering Student',
+    birthYear: 2003,
+    hasDriversLicense: true,
+    
+    // calcAge: function(birthYear){
+    //     return 2022 - birthYear;
+    // } Method = object's function
+
+    calcAge: function(birthYr=this.birthYear){
+        return 2022 - birthYr;
+    }
+};
+
+console.log(bruno.calcAge(2000));
+console.log(bruno['calcAge']());
