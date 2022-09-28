@@ -31,3 +31,29 @@ console.log(tips);
 console.log(total);
 
 */
+
+const calcTip = value => value >= 50 && value <= 300 ? value*0.15 : value*0.2; 
+
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for(let i = 0; i < bills.length; i++){
+    tips.push(calcTip(bills[i]));
+    totals.push(bills[i] + tips[i]);
+}
+console.log(`Bills: ${bills}\nTips: ${tips}\nTotals = ${totals}`);
+
+const calcAvg = function(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++)
+        sum += arr[i];
+    return sum/arr.length;
+}
+
+console.log(`Bills Avg: ${calcAvg(bills)}\nTips Avg: ${calcAvg(tips)}\nTotals Avg: ${calcAvg(totals)}`);
+
+
+
+

@@ -221,4 +221,82 @@ console.log(bruno.calcAge());
 console.log(bruno.age);
 bruno.introduceMe();
 
+
+// The for loop
+
+for(let rep = 1; rep <= 5; rep++)
+    console.log(`Lifting weights repetition ${rep}.`);
+
+
+const randomElmts = ['Hello, there!', 3, 
+true, [1,2,3,4,5], {name: 'Bruno', age: 19}];
+
+const randomTypes = [];
+
+for(let i = 0; i < randomElmts.length; i++){
+    randomTypes.push(typeof randomElmts[i]);
+    console.log(randomElmts[i]);
+}
+console.log(randomTypes);
+
+const years = [1918, 1945, 1991, 1982];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2022 - years[i]);
+}
+
+console.log(ages);
+
+
+//The continue statement immediately skips
+//the loop to the next iteration.
+
+//The break statement skips all iterations
+
+const random2 = ['a', 1, 2, 'b', 3, 'c'];
+for(let i = 0; i < random2.length; i++){
+    if(typeof random2[i] !== 'string')
+        continue;
+    console.log(random2[i], typeof random2[i]);
+}
+
+for(let i = 0; i < random2.length; i++){
+    if(typeof random2[i] === 'number')
+        break;
+    console.log(random2[i], typeof random2[i]);
+}
+
+const randomElmts = ['Hello, there!', 3, 
+true, [1,2,3,4,5], {name: 'Bruno', age: 19}];
+
+for(let i = randomElmts.length - 1; i >= 0; i--){
+    console.log(randomElmts[i]);
+}
+
+for(let e = 1; e < 4; e++){
+    console.log(`Starting exercise ${e}`);
+    for(let rep = 1; rep < 6; rep++)
+        console.log(`Repetion ${rep}`);    
+}
+
+//The while loop
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(rep);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while(dice !== 6){
+    console.log(`You rolled a ${dice}.`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
 */
+
+
+
+
