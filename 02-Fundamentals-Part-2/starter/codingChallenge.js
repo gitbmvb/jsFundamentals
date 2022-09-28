@@ -30,7 +30,6 @@ console.log(bills);
 console.log(tips);
 console.log(total);
 
-*/
 
 const calcTip = value => value >= 50 && value <= 300 ? value*0.15 : value*0.2; 
 
@@ -54,6 +53,4 @@ const calcAvg = function(arr) {
 
 console.log(`Bills Avg: ${calcAvg(bills)}\nTips Avg: ${calcAvg(tips)}\nTotals Avg: ${calcAvg(totals)}`);
 
-
-
-
+*/
