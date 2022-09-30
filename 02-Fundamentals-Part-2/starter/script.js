@@ -298,5 +298,5 @@ while(dice !== 6){
 */
 
 
-
+// Extra: more array methods
 
