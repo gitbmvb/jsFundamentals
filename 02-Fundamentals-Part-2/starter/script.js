@@ -300,3 +300,96 @@ while(dice !== 6){
 
 // Extra: more array methods
 
+// .concat() = merge two arrays
+let first = [1, 2, 3];
+let second = [4, 5, 6];
+let third = first.concat(second);
+console.log(third);
+third = second.concat(first);
+console.log(third);
+first = first.concat(second);
+console.log(first);
+
+// .copyWithin() = copies array elements within the array, to and from
+//specified positions.
+
+//REVIEW THIS.
+const fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+console.log(fruits);
+console.log(fruits.copyWithin(2, 0));
+
+
+// .entries() = returns a key/value pair array iteration object
+
+const frEntries = fruits.entries();
+
+for(let f of frEntries)
+    console.log(f);
+
+
+// .every() = checks if every element in an array pass a test
+
+let elements = [1, 2, 3, 4, 5];
+
+let checkElements = elements.every(function(els){
+    return typeof els === 'number';
+})
+console.log(checkElements);
+
+elements.push('bla bla bla');
+checkElements = elements.every(function(els){
+    return typeof els === 'number';
+})
+
+console.log(checkElements);
+
+// .fill() = fills the elements in an array with a static value
+elements = [1, 2, 3, 4, 5, 6];
+elements.fill(0);
+console.log(elements);
+
+//.filter() = creates a new array with every element in an array that pass
+// a test
+
+const ages = [18, 19, 13, 12, 21, 22, 9];
+
+const result = ages.filter(checkAdult);
+
+function checkAdult(age){
+    return age >= 18;
+}
+console.log(result);
+
+// .find() = returns the value of the first element in an array that pass a test
+
+let random = [1, 'a', true, 2, false];
+console.log(random, random.find(function (r){
+    return typeof r === 'boolean';
+}));
+
+// .findIndex() = returns the index of the first element
+// in an array that pass a test.
+//Obs.: lastIndexOf() does exactly the opposite.
+
+console.log(random.findIndex(function(r){
+    return typeof r === 'boolean';
+}));
+
+//.forEach() = calls a function for each array element
+const simpleNumbers = [1, 2, 3, 4, 5];
+simpleNumbers.forEach(function(sn){
+    console.log(sn * 2);
+});
+
+//.Array.from() = create an array from a string
+console.log(Array.from("Bruno"));
+
+
+//.join() = joins all elements of an array into a string
+let arrayName = ["Bruno", "Martins", "V", "Bomfim"];
+let myName = arrayName.join(" ");
+console.log(myName);
+
+// .keys() = return an array containing the keys from the original array
+
+// .length() = length of the array
