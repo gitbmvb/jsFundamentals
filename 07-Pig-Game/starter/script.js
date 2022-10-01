@@ -4,17 +4,16 @@
 const score0 = document.querySelector('#score--0'); */
 
 // Selecting Element
-const player0El = document.querySelector('.player--0');
-const player1El = document.querySelector('.player--1');
-const score0El = document.getElementById('score--0');
-const score1El = document.getElementById('score--1');
-const current0El  = document.getElementById('current--0');
-const current1El  = document.getElementById('current--1');
+const playerEls = [document.querySelector('.player--0'), document.querySelector('.player--1')];
+const scoreEls = [document.getElementById('score--0'), document.getElementById('score--1')];
+const currentEls = [document.getElementById('current--0'), document.getElementById('current--1')];
 
 const diceEl = document.querySelector('.dice');
-const btnNew = document.querySelector('.btn--new');
-const btnRoll = document.querySelector('.btn--roll');
-const btnHold = document.querySelector('.btn--hold');
+const btn = {
+    new: document.querySelector('.btn--new'),
+    roll: document.querySelector('.btn--roll'),
+    hold: document.querySelector('.btn--hold'),
+}
 
 const maxScore = 10;
 let scores, currentScore, activePlayer, playing;
@@ -26,15 +25,15 @@ const init = function(){
     currentScore = 0;
     activePlayer = 0;
     playing = true;
-    player0El.classList.add('player--active');
-    player0El.classList.remove('player--winner');
-    player1El.classList.remove('player--active');
-    player1El.classList.remove('player--winner');
+    playerEls[0].classList.add('player--active');
+    playerEls[0].classList.remove('player--winner');
+    playerEls[1].classList.remove('player--active');
+    playerEls[1].classList.remove('player--winner');
     diceEl.classList.add('hidden');
-    score0El.textContent = 0;
-    score1El.textContent = 0;
-    current0El.textContent = 0;
-    current1El.textContent = 0;
+    scoreEls[0].textContent = 0;
+    scoreEls[1].textContent = 0;
+    currentEls[0].textContent = 0;
+    currentEls[1].textContent = 0;
 };
 
 init();
@@ -45,12 +44,12 @@ const switchPlayer = function(){
     activePlayer = activePlayer === 0 ? 1 : 0;
     //.toggle() adds a specified class to an object which doesn't have it
     // and removes from the one that has it.
-    player0El.classList.toggle('player--active');
-    player1El.classList.toggle('player--active');
+    playerEls[0].classList.toggle('player--active');
+    playerEls[1].classList.toggle('player--active');
 };
 
 // Rolling dice functionality
-btnRoll.addEventListener('click', function(){
+btn['roll'].addEventListener('click', function(){
     if(playing){
         const dice = Math.trunc(Math.random() * 6) + 1;
         diceEl.classList.remove('hidden');
@@ -65,7 +64,7 @@ btnRoll.addEventListener('click', function(){
 });
 
 
-btnHold.addEventListener('click', function(){
+btn['hold'].addEventListener('click', function(){
     if(playing){
         scores[activePlayer] += currentScore;
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
@@ -82,4 +81,4 @@ btnHold.addEventListener('click', function(){
 });
 
 
-btnNew.addEventListener('click', init);
+btn['new'].addEventListener('click', init);
