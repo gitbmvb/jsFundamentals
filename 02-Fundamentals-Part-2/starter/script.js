@@ -63,7 +63,7 @@ console.log(calcAge2(2003));
 
 // Arrow functions
 
-// Arrow functions is a shorter and fast-to-write type of function expression
+// Arrow function is a shorter and fast-to-write type of function expression
 // If a arrow functions has multiple lines, it
 // must have a return
 
